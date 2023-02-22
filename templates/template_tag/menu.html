@@ -1,0 +1,12 @@
+<div class="Menu_{{ menu }}" style="display: flex; flex-direction: column">{{ menu }}
+{% for item in menu_items %}
+    {% if item.parent == null %}
+        <a class="{{ item.slug }}" href="{{ item.url }}">{{ item.title }}</a>
+    {% endif %}
+    {% for subitem in menu_items %}
+        {% if subitem.parent == item %}
+            <a class="{{ subitem.slug }}" href="{{ item.url }}">{{ subitem.title }}</a>
+        {% endif %}
+    {% endfor %}
+{% endfor %}
+</div>
