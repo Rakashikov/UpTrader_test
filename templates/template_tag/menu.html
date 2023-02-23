@@ -5,7 +5,7 @@
     {% endif %}
     {% for subitem in menu_items %}
         {% if subitem.parent == item %}
-            <a class="{{ subitem.slug }}" href="{{ item.url }}">{{ subitem.title }}</a>
+            <a class="{{ subitem.slug }}" href="{{ subitem.url }}">{{ subitem.title }}</a>
         {% endif %}
     {% endfor %}
 {% endfor %}
